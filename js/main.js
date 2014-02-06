@@ -28,19 +28,19 @@ var lakeYears = ['-31500', '-31000', '-30000', '-29500', '-29000', '-28500', '-2
 '-20000', '-19500', '-19000', '-18500', '-18000', '-17000', '-16600', '-16000', '-15750', '-15500', '-15250', 
 '-15000', '-14600', '-14000', '-13500', '-13250', '-13100', '-12900', '-12500', '-12000', '-11500', '-11000'];
 
-var yearText = (function () {
-    var yearText = null;
-    $.ajax({
-        'async': false,
-        'global': false,
-        'url': '../glacial/data/yearWords.json',
-        'dataType': "json",
-        'success': function (data) {
-            yearText = data;
-        }
-    });
-    return yearText;
-})();
+//var yearText = (function () {
+//    var yearText = null;
+//    $.ajax({
+//        'async': false,
+//        'global': false,
+//        'url': '../glacial/data/yearWords.json',
+//        'dataType': "json",
+//        'success': function (data) {
+//            yearText = data;
+//        }
+//    });
+//    return yearText;
+//})();
 
 
 
@@ -58,5 +58,10 @@ function initialize() {
  * After page finishes loading, jQuery call to function initialize.
  */
 $(initialize);
+
+$(window).on("resize", function() {
+    $("#map").height($(window).height()).width($("#map-container").width());
+    map.invalidateSize();
+}).trigger("resize");
 
 // 

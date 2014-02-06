@@ -3,48 +3,107 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>Laurentide Ice Sheet</title>
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="lib/vendor/modernizr.js"></script>
   </head>
   <body>
+      <!-- Navigation -->
+ 
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="http://wisconsingeologicalsurvey.org/">
+          Wisconsin Geological and Natural History Survey
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+        <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="divider"></li>
+         <li><a href="#about">About</a></li>
+      </ul>
+    </section>
+  </nav>
+ 
+  <!-- End Top Bar -->
     
     <div class="row">
       <div class="large-12 columns">
-        <h1>Glacier Extent</h1>
+        <h1>Laurentide Ice Sheet Ice-Margin Positions</h1>
       </div>
     </div>
     
     <div class="row">
       <div class="large-12 columns">
       	<div class="panel">
+<p>These maps show our best estimate of where the southern margin of the Laurentide Ice Sheet was at various times between about 31,500 and 11,000 calendar years ago.  The maps also show the extent of various lakes through that same time interval.  Few of these ice margin positions are closely constrained in time by radiocarbon or other types of dates.  Positions of the ice margin during retreat are particularly poorly constrained in time.  Nearly all of the ice margin positions we show on the map are based on our long-distance and uncertain correlation of landscape features that mark former positions of the ice margin.  Where no direct dating is available to constrain the timing of one of our ice margin positions we note "no constraints". Large glacial lakes are shown, but many smaller ones are not. Glacial lakes are not shown in Illinois.</p>			
+      	</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+      	<div class="panel" id="map-container">
 	      	<div id = "map">
 	      	</div>
       	</div>
       </div>
     </div>
     
+
+    
      <div class="row">
       <div class="large-12 columns">
-      	<div class="panel">
-
+      	<div class="panel" id="about">
+      	<h1>About</h1>
+<p>These maps are intended to provide a visual portrayal of the fluctuations of the southern margin of the Laurentide Ice Sheet in Wisconsin and parts of surrounding states. These maps are intended to be used at the 8 ½ x11 inch page size and no larger. They are not intended to provide details that larger more detailed maps would provide. We suggest that these maps are best viewed as a continuous sequence.</p>
+<p><b>Funding provided by:</b> Great Lakes Mapping Coalition</p>
+<p><b>Data created by:</b> David M. Mickelson and John W. Attig</p>
+<p><b>Web map built by:</b> Erin L. Hamilton</p>
       	</div>
       </div>
     </div>
     
-     <div class="row">
-      <div class="large-12 columns">
-      	<div class="panel">
-
-      	</div>
+     <!-- Footer -->
+ 
+  <footer class="row">
+  <div class="large-12 columns"><hr />
+      <div class="row">
+ 
+        <div class="large-6 columns">
+            <p>© 2013 Wisconsin Geological and Natural History Survey</p>
+        </div>
+ 
+        <div class="large-6 columns">
+            <ul class="inline-list right">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+              <li><a href="#">Link 4</a></li>
+            </ul>
+        </div>
+ 
       </div>
-    </div>
-
+  </div>
+  </footer>
     
+
+    <!-- JavaScript Libraries-->
     <script src="lib/vendor/jquery.js"></script>
     <script src="lib/foundation.min.js"></script>
     <script src="lib/leaflet.js"></script>
+    <script src="lib/leaflet.ajax.min.js"></script>
+    
+     <script src="js/map.js"></script>
+      <script src="js/main.js"></script>
     <script>
       $(document).foundation();
     </script>

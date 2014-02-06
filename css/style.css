@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+h1{
+font-size: large;	
+	
+}
+
+#map
+{
+margin: auto;
+margin-top: 1em;
+padding: 1em;
+height: 100%;
+width: 100%;
+/*border:1px solid #C0C0C0;*/
+}
+
+.panel{
+background: none;
+border:#fff;
+}
+
+.top-bar{
+background:#382727;
+border-bottom:2px solid #c24646;
+}
+
+

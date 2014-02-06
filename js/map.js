@@ -24,7 +24,7 @@ var states;
  * Called from main.js initialize()
  */
 function setMap(){
-	var zoom = 6;
+	var zoom = 7;
 	var center = [44.25, -88.75];
 
 	var acetate = L.tileLayer(
@@ -76,6 +76,14 @@ function setMap(){
 	var baseLayerControl =   L.control.layers(baseMaps, null, {position: 'topleft', collapsed: true});
 
 	baseLayerControl.addTo(map);
+	
+	var geojsonLayer = new L.GeoJSON.AJAX("http://erinhamilton.me/glacial/data/lakes1000/11000.geojson",{dataType:"jsonp"});
+	
+	L.geoJson(geojsonLayer, {
+	    style: function (feature) {
+	        return {color: "#63D1F4"};
+	    }
+	}).addTo(map);
 	
 	
 }
