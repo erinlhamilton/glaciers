@@ -35,10 +35,10 @@ function setMap(){
 
 
 	var wgnhs = L.tileLayer.wms(
-		//'http://gis.wgnhs.org/arcgis/services/dev/glacial_extents_topo/MapServer/WMSServer',
-		'http://cyclone.ad.wgnhs.uwex.edu/arcgis/services/dev/glacial_extents_topo/MapServer/WMSServer',
-		
-		{
+			//'http://gis.wgnhs.org/arcgis/services/dev/glacial_extents_topo/MapServer/WMSServer',
+			'http://cyclone.ad.wgnhs.uwex.edu/arcgis/services/dev/glacial_extents_topo/MapServer/WMSServer',
+
+			{
 			format: 'image/png',
 			layers: 1,
 			transparent: true,
@@ -47,10 +47,10 @@ function setMap(){
 		});	
 		
 		var wgnhsShade = L.tileLayer.wms(
-		//'http://gis.wgnhs.org/arcgis/services/dev/glacial_extents_topo/MapServer/WMSServer',
-		'http://cyclone.ad.wgnhs.uwex.edu/arcgis/services/dev/glacial_extents_topo/MapServer/WMSServer',
-		
-		{
+			//'http://gis.wgnhs.org/arcgis/services/dev/glacial_extents_topo/MapServer/WMSServer',
+			'http://cyclone.ad.wgnhs.uwex.edu/arcgis/services/dev/glacial_extents_topo/MapServer/WMSServer',
+
+			{
 			format: 'image/png',
 			layers: 0,
 			attribution: 'Wisconsin Geological and Natural History Survey tiles'
@@ -77,13 +77,12 @@ function setMap(){
 
 	baseLayerControl.addTo(map);
 	
-	var geojsonLayer = new L.GeoJSON.AJAX("http://erinhamilton.me/glacial/data/lakes1000/11000.geojson",{dataType:"jsonp"});
+	var geojsonLayer = new L.GeoJSON.AJAX("data/lakes1000/11000.json", {
+			style: function (feature) {
+					return {color: "#63D1F4"};
+			}
+	});
 	
-	L.geoJson(geojsonLayer, {
-	    style: function (feature) {
-	        return {color: "#63D1F4"};
-	    }
-	}).addTo(map);
-	
-	
+	geojsonLayer.addTo(map);
+		
 }

@@ -1,9 +1,21 @@
 @CHARSET "ISO-8859-1";
 
+
+body
+{
+font-family: "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+background-image:url("../img/bedge_grunge.png");
+}
+
 h1{
 font-size: large;	
+}
+
+#map-container{
+	width: 90%;
 	
 }
+
 
 #map
 {
@@ -12,7 +24,7 @@ margin-top: 1em;
 padding: 1em;
 height: 100%;
 width: 100%;
-/*border:1px solid #C0C0C0;*/
+border:1px solid #C0C0C0;
 }
 
 .panel{
