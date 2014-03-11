@@ -64,7 +64,6 @@ function animateMap(){
 		timeStamp = startTime;
 	}
 	showVector(timeStamp);//-->map.js	
-	transitionVector(timeStamp);
 	clearVector(timeStamp);//-->map.js
 	//updateTimeline(timeStamp);
 }
@@ -104,12 +103,7 @@ timer.set({ time : timeInterval, autostart : false });
 /**
  * Back button to step backwards on the timeline
  */
-//$( "#back" ).button({
-//icons: {
-//	primary: "ui-icon-seek-prev"
-//},
-//text: false
-//}).click(function(){
+//$( "#back" ).click(function(){
 //	timer.stop();
 //	clearVector(timeStamp);//-->map.js
 //	if(timeStamp > startTime){
@@ -138,12 +132,7 @@ $( "#play" ).click(function(){
 /**
  * Pause animation at current year (timeStamp)
  */
-//$( "#pause" ).button({
-//	icons: {
-//		primary: "ui-icon-pause"
-//	},
-//	text: false
-//}).click(function(){
+//$( "#pause" ).click(function(){
 //	timer.stop();
 //	$("#pause").hide();
 //	$("#play").show();
@@ -155,12 +144,7 @@ $( "#play" ).click(function(){
 /**
  * Stop button sets time back to start.
  */
-//$( "#stop" ).button({
-//	icons: {
-//	primary: "ui-icon-stop"
-//	},
-//	text: false
-//}).click(function(){
+//$( "#stop" ).click(function(){
 //	timer.stop();
 //	clearVector(timeStamp);//-->map.js
 //	timeStamp = startTime;
@@ -174,12 +158,7 @@ $( "#play" ).click(function(){
 /**
  * Forward button to step forward on timeline
  */
-//$( "#forward" ).button({
-//	icons: {
-//	primary: "ui-icon-seek-next"
-//	},
-//	text: false
-//	}).click(function(){
+//$( "#forward" ).click(function(){
 //		timer.stop();
 //		clearVector(timeStamp);//-->map.js
 //		if(timeStamp < endTime){
