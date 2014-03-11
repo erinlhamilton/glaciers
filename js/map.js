@@ -16,7 +16,7 @@
 /**Global Variabls**/
 var map;
 var glaciers;
-var lakes;
+var lakes = new Array();
 var states;
 
 /**
@@ -77,12 +77,51 @@ function setMap(){
 
 	baseLayerControl.addTo(map);
 	
-	var geojsonLayer = new L.GeoJSON.AJAX("data/lakes1000/11000.json", {
-			style: function (feature) {
-					return {color: "#63D1F4"};
-			}
-	});
+	lakes[0] = new L.GeoJSON.AJAX("data/lakes1000/"+years[0]+".geojson", {
+		style: function (feature) {
+			return {color: "#63D1F4",
+				fillOpacity: .85};
+	}
+	}).addTo(map);
 	
-	geojsonLayer.addTo(map);
 		
+}
+
+/**
+ * Set the opacity of previous year to 1
+ *@param: yearsIndex is timeStamp in timeline, the current years array index.
+ */ 
+function showVector(yearsIndex) {
+		
+	lakes[yearsIndex] = new L.GeoJSON.AJAX("data/lakes1000/"+years[yearsIndex]+".geojson", {
+		style: function (feature) {
+			return {color: "#63D1F4",
+				fillOpacity: .85};
+	}
+	}).addTo(map);
+	
+	
+
+	
+}
+/**
+ * Set the opacity of previous year to 1
+ *@param: yearsIndex is timeStamp in timeline, the current years array index.
+ */ 
+	function transitionVector(yearsIndex) {
+		lakes[yearsIndex-1].setStyle({
+	        fillOpacity: 0.5
+	    });
+}
+
+/**
+ * Set the opacity of previous year to 1
+ *@param: yearsIndex is timeStamp in timeline, the current years array index.
+ */ 
+	function clearVector(yearsIndex) {
+		lakes[yearsIndex-1].setStyle({
+	        fillOpacity: 0
+	    });
+		//map.removeLayer(lakes[yearsIndex-1]);
+
 }

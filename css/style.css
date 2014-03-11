@@ -13,6 +13,7 @@ font-size: large;
 
 #map-container{
 	width: 90%;
+	text-align: center;
 	
 }
 
@@ -35,6 +36,17 @@ border:#fff;
 .top-bar{
 background:#382727;
 border-bottom:2px solid #c24646;
+}
+
+#yearText{
+font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
+font-weight: bold;
+position: absolute;
+z-index: 80;
+bottom: 55px;
+font-size: 25px;
+width:100px;
+height: 25px;
 }
 
 

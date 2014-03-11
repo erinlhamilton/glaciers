@@ -61,7 +61,10 @@ $(initialize);
 
 $(window).on("resize", function() {
     $("#map").height($(window).height()).width($("#map-container").width());
-    map.invalidateSize();
+    	if ($("#map").height() > 700){
+    		$("#map").height(700);
+    	};
+   // map.invalidateSize();
 }).trigger("resize");
 
 // 
