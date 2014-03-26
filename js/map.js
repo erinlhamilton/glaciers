@@ -5,7 +5,7 @@
 // Author:          Erin Hamilton
 // Email:           erin@erinhamilton.me
 //
-// Last Updated:    December 2013
+// Last Updated:    March 2014
 //
 // Description:     Creates the Leaflet map displaying the glacial extents in
 //                  Wisconsin. Fetches data from ArcGIS server asynchronously.
@@ -78,6 +78,7 @@ function setMap(){
 	baseLayerControl.addTo(map);
 	
 	loadLakes();
+	showVector(timeStamp);
 }
 /**
  * Set the opacity of previous year to 1
@@ -122,6 +123,8 @@ function loadLakes() {
 					fillOpacity: 0};
 		}
 		}).addTo(map);
+		
+		
 	}
 	
 	

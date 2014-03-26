@@ -7,7 +7,7 @@
 // Author:          Erin Hamilton
 // Email:           erin@erinhamilton.me
 //
-// Last Updated:    December 2013
+// Last Updated:    March 2014
 //
 // Description:     Controls main functionality of Wisconsin Glacial Extents.
 //                  Calls functions to create map, timeline, and dialog on 

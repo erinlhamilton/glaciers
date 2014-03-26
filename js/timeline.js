@@ -6,7 +6,7 @@
 // Author:          Erin Hamilton
 // Email:           erin@erinhamilton.me
 //
-// Last Updated:    December, 2013
+// Last Updated:    March 2014
 //
 // Description:    Creates the jQuery UI slider for timeline control, as well
 //                 as timer module and play/pause/step buttons.
@@ -24,33 +24,6 @@ var endTime = years.length-1; //end time is the length of the years array
 var timer;
 
 
-/**
- * Creates the jQuery slider and buttons to use for controlling the date displayed
- * Called from main.js initialize()
- */
-//function setTimeline(){
-//
-//	$( "#slider" ).slider(
-//		{
-//		min: startTime,
-//		max: endTime,
-//		value: timeStamp,
-//		step: 1,
-//		animate: 'slow',
-//		slide: function( event, ui ) {
-//		}
-//		}
-//	);
-//	
-//	//whenever the slider is manually changed, update the timeStamp and animate map
-//	$( "#slider" ).on( "slide", function( event, ui ) {
-//		timer.stop();
-//		clearVector(timeStamp);//-->map.js
-//		timeStamp = ui.value;
-//		showVector(timeStamp);//-->map.js
-//		updateTimeline(timeStamp);
-//	}); 	
-//}
 
 /**
  * On play, step, or grab of slider, call this function to change layers on map
@@ -96,7 +69,7 @@ function updateTimeline(currentTime){
  * and initiate it with an interval
  */
 timer = $.timer(function() {
-	animateMap()
+	animateMap();
 });
 timer.set({ time : timeInterval, autostart : false });
 

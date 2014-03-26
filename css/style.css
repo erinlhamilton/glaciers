@@ -26,6 +26,8 @@ background-image:url("../img/bedge_grunge.png");
 
 
 
+
+
 #map
 {
 
@@ -42,6 +44,7 @@ border:#fff;
 }
 
 .top-bar{
+font-weight: heavy;
 background:#382727;
 border-bottom:2px solid #c24646;
 }
@@ -53,17 +56,62 @@ border-bottom:2px solid #c24646;
 	border-bottom:2px solid #c24646;
 	line-height: 43px;
 	}
-
+	
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+color: #c24646;
+background:#382727;
+}
 
 #yearText{
-font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
+font-family: "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
 font-weight: bold;
 position: absolute;
 z-index: 80;
-bottom: 55px;
+bottom: 75px;
 font-size: 25px;
 width:100px;
 height: 25px;
 }
+
+button{
+	background: none;
+	padding: 1rem 1rem 1rem 1rem;
+}
+
+
+#timerControls{
+	position: absolute;
+	bottom:0px;
+	z-index:80;
+}
+
+#timerControls img{
+	fill: #fff;
+}
+
+
+/* #back{ */
+/* 	z-index: 80; */
+/* 	bottom: 0px; */
+/* } */
+
+/* #play{ */
+/* 	z-index: 80; */
+/* 	bottom: 0px; */
+/* } */
+
+/* #play:hover{ */
+/* 	fill: green; */
+/* } */
+
+/* #pause{ */
+/* 	z-index: 80; */
+/* 	bottom: 0px; */
+/* } */
+
+/* #forward{ */
+/* 	z-index: 80; */
+/* 	bottom: 0px; */
+/* } */
 
 
