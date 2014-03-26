@@ -78,7 +78,6 @@ function setMap(){
 	baseLayerControl.addTo(map);
 	
 	loadLakes();
-	showVector(0);
 }
 /**
  * Set the opacity of previous year to 1
@@ -98,15 +97,15 @@ function showVector(yearsIndex) {
  *@param: yearsIndex is timeStamp in timeline, the current years array index.
  */ 
 	function clearVector(yearsIndex) {
-			var currYear = yearsIndex-1;
-		if (yearsIndex == 0){
-			currYear = years.length;
-		}
-		lakes[currYear].setStyle({
-	        fillOpacity: 0
-	    });
-		//map.removeLayer(lakes[yearsIndex-1]);
-
+			var currYear;
+			if (yearsIndex === 0){
+				currYear = years.length-1;
+			}else{
+				currYear = yearsIndex-1;
+			}
+			lakes[currYear].setStyle({
+		        fillOpacity: 0
+		    });
 }
 /**
  * Set the opacity of previous year to 1

@@ -65,7 +65,7 @@ function animateMap(){
 	}
 	showVector(timeStamp);//-->map.js	
 	clearVector(timeStamp);//-->map.js
-	//updateTimeline(timeStamp);
+	updateTimeline(timeStamp);
 }
 
 /**

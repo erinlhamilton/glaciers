@@ -7,20 +7,28 @@ font-family: "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
 background-image:url("../img/bedge_grunge.png");
 }
 
-h1{
-font-size: large;	
+#pageTitle{
+	margin-top: 1em;
+	font-weight: heavy;
+	text-align: center;
 }
+
+#titleAuthors{
+	
+	text-align: center;
+}
+
 
 #map-container{
 	width: 90%;
-	text-align: center;
-	
+	margin: 0 auto;
 }
+
 
 
 #map
 {
-margin: auto;
+
 margin-top: 1em;
 padding: 1em;
 height: 100%;
@@ -37,6 +45,15 @@ border:#fff;
 background:#382727;
 border-bottom:2px solid #c24646;
 }
+
+
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+	background:#382727;
+	border-bottom:2px solid #c24646;
+	line-height: 43px;
+	}
+
 
 #yearText{
 font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
