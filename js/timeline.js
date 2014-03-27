@@ -60,8 +60,8 @@ function animateMap(){
  */
 function updateTimeline(currentTime){
 	$("#yearText").html(commaSeparateNumber(years[currentTime]));
-//	$( "#glacierText h5 b" ).html(commaSeparateNumber(years[currentTime]));
-//	$( "#glacierText p" ).html(yearText[years[currentTime]]);
+	//$( "#glacierText h5 b" ).html(commaSeparateNumber(years[currentTime]));
+	$( "#glacierText p" ).html(yearText[years[currentTime]]);
 }
 
 /**
@@ -76,42 +76,42 @@ timer.set({ time : timeInterval, autostart : false });
 /**
  * Back button to step backwards on the timeline
  */
-//$( "#back" ).click(function(){
-//	timer.stop();
-//	clearVector(timeStamp);//-->map.js
-//	if(timeStamp > startTime){
-//		timeStamp = timeStamp - 1;
-//	}else{
-//		timeStamp = endTime;
-//	}
-//	showVector(timeStamp);//-->map.js
-//	updateTimeline(timeStamp);
-//	$("#pause").hide();
-//	$("#play").show();
-//	
-//});
+$( "#back" ).click(function(){
+	timer.stop();
+	clearVector(timeStamp);//-->map.js
+	if(timeStamp > startTime){
+		timeStamp = timeStamp - 1;
+	}else{
+		timeStamp = endTime;
+	}
+	showVector(timeStamp);//-->map.js
+	updateTimeline(timeStamp);
+	$("#pause").hide();
+	$("#play").show();
+	
+});
 
 /**
  * Play button to play animation on timeline and map
  */ 
 $( "#play" ).click(function(){
 		timer.play();
-//		$("#play").hide();
-//		$("#pause").show();
-//		$("#glacierText").hide();
+		$("#play").hide();
+		$("#pause").show();
+		$("#glacierText").hide();
 });
 
 
 /**
  * Pause animation at current year (timeStamp)
  */
-//$( "#pause" ).click(function(){
-//	timer.stop();
-//	$("#pause").hide();
-//	$("#play").show();
-//	$("#glacierText").show();
-//	
-//	});
+$( "#pause" ).click(function(){
+	timer.stop();
+	$("#pause").hide();
+	$("#play").show();
+	$("#glacierText").show();
+	
+	});
   
 
 /**
@@ -131,17 +131,17 @@ $( "#play" ).click(function(){
 /**
  * Forward button to step forward on timeline
  */
-//$( "#forward" ).click(function(){
-//		timer.stop();
-//		clearVector(timeStamp);//-->map.js
-//		if(timeStamp < endTime){
-//			timeStamp = timeStamp + 1;
-//		}
-//		else{
-//			timeStamp = startTime;
-//		}
-//		showVector(timeStamp);//-->map.js
-//		updateTimeline(timeStamp);
-//		$("#pause").hide();
-//		$("#play").show();
-//});
+$( "#forward" ).click(function(){
+		timer.stop();
+		clearVector(timeStamp);//-->map.js
+		if(timeStamp < endTime){
+			timeStamp = timeStamp + 1;
+		}
+		else{
+			timeStamp = startTime;
+		}
+		showVector(timeStamp);//-->map.js
+		updateTimeline(timeStamp);
+		$("#pause").hide();
+		$("#play").show();
+});

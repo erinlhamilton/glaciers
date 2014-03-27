@@ -49,8 +49,10 @@ var yearText = (function () {
  */
 function initialize() {
 	"use strict";
+	$("#pause").hide();
 	setMap();
 	$("#yearText").html(commaSeparateNumber(years[0]));
+	$( "#glacierText p" ).html(yearText[years[0]]);
 	showVector(0);
 	
 }

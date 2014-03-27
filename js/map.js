@@ -76,9 +76,7 @@ function setMap(){
 	var baseLayerControl =   L.control.layers(baseMaps, null, {position: 'topleft', collapsed: true});
 
 	baseLayerControl.addTo(map);
-	
 	loadLakes();
-	showVector(timeStamp);
 }
 /**
  * Set the opacity of previous year to 1
