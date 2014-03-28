@@ -96,13 +96,13 @@ function showVector(yearsIndex) {
  *@param: yearsIndex is timeStamp in timeline, the current years array index.
  */ 
 	function clearVector(yearsIndex) {
-			var currYear;
-			if (yearsIndex === 0){
-				currYear = years.length-1;
-			}else{
-				currYear = yearsIndex-1;
-			}
-			lakes[currYear].setStyle({
+//			var currYear;
+//			if (yearsIndex === 0){
+//				currYear = years.length-1;
+//			}else{
+//				currYear = yearsIndex-1;
+//			}
+			lakes[yearsIndex].setStyle({
 		        fillOpacity: 0
 		    });
 }

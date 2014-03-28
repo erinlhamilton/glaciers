@@ -65,10 +65,12 @@ $(initialize);
 
 $(window).on("resize", function() {
     $("#map").height($(window).height()).width($("#map-container").width());
-    	if ($("#map").height() > 700){
-    		$("#map").height(700);
+    	if ($("#outer-map-container").height() > 900){
+    		$("#outer-map-container").height(900);
+    	};
+    	if ($("#outer-map-container").width() > 900){
+    		$("#outer-map-container").width(900);
     	};
    // map.invalidateSize();
 }).trigger("resize");
 
-// 

@@ -18,7 +18,9 @@ background-image:url("../img/bedge_grunge.png");
 	text-align: center;
 }
 
-
+#outer-map-container{
+	margin: 0 auto;
+}
 #map-container{
 	width: 90%;
 	margin: 0 auto;
@@ -32,6 +34,7 @@ background-image:url("../img/bedge_grunge.png");
 	bottom: 0;
 	right: 0;
 	margin: auto;
+	margin-bottom: 1em;
 }
 
 #glacierText p{
@@ -40,7 +43,6 @@ background-image:url("../img/bedge_grunge.png");
 
 #map
 {
-
 margin-top: 1em;
 padding: 1em;
 height: 100%;
@@ -63,7 +65,7 @@ border-bottom:2px solid #c24646;
 	background:#382727;
 	border-bottom:2px solid #c24646;
 	line-height: 43px;
-	}
+}
 	
 .top-bar-section li:not(.has-form) a:not(.button):hover {
 color: #c24646;
@@ -76,21 +78,45 @@ font-weight: bold;
 padding-left: 1.25em;
 position: absolute;
 z-index: 80;
-bottom: 75px;
+bottom: 80px;
+left: 20px;
 font-size: 25px;
 width:100px;
 height: 25px;
 }
 
 button{
-	background: none;
-	padding: 1rem 1rem 1rem 1rem;
+	background: white;
+	border-color: white;
+	opacity: 0.5;
+	padding: 0.75rem;
+}
+
+button:hover{
+	background: white;
+	opacity: 0.8;
+}
+
+.button:focus{
+	background-color: white;
+	background: white;
+	opacity: 0.8;
+}
+
+button:focus{
+	background-color: white;
+	background: white;
+	opacity: 0.8;
 }
 
 
 #timerControls{
 	position: absolute;
-	bottom:0px;
+	margin: 0;
+	padding: 0;
+	height: 50px;
+	left: 20px;
+	bottom:10px;
 	z-index:80;
 }
 

@@ -30,6 +30,7 @@ var timer;
  *
  */
 function animateMap(){
+	clearVector(timeStamp);//-->map.js
 	if (timeStamp < endTime) {
 		timeStamp = timeStamp + 1;
 	}
@@ -37,7 +38,6 @@ function animateMap(){
 		timeStamp = startTime;
 	}
 	showVector(timeStamp);//-->map.js	
-	clearVector(timeStamp);//-->map.js
 	updateTimeline(timeStamp);
 }
 
