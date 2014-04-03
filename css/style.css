@@ -3,31 +3,71 @@
 
 body
 {
-font-family: "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+font-family: "Neuton";
 background-image:url("../img/bedge_grunge.png");
 }
 
+.name a{
+	font-family: "Neuton";
+	font-weight: normal;
+	font-size: 1.3em;
+}
+
+
 #pageTitle{
+	font-size: 1.5em;
+	font-family: "Neuton";
 	margin-top: 1em;
-	font-weight: heavy;
+	font-weight: 700;
 	text-align: center;
 }
 
 #titleAuthors{
-	
+	font-size: 1.25em;
+	font-family: "Neuton";
+	font-weight: 400;
 	text-align: center;
+}
+
+p.intro{
+	font-weight: 300;
+	text-align: justify;
+	font-family: "Neuton";
+	font-size: 1.5em;
+}
+
+b.small{
+	font-weight: 300;
+	font-variant: small-caps;
+}
+
+p.note{
+	font-weight: 300;
+	text-align: justify;
+	font-family: "Neuton";
+	font-size: 1.1em;
+
+}
+
+b.cap{
+	font-family: "Neuton";
+	font-weight: 400;
+	text-transform:uppercase;
 }
 
 #outer-map-container{
 	margin: 0 auto;
 }
 #map-container{
+	margin: 5em;
 	width: 90%;
 	margin: 0 auto;
 }
 
 #glacierText{
 	position: absolute;
+	background-color: rgba(230, 230, 230, 0.5);
+	border-color: #E6E6E6;
 	z-index: 80;
 	width: 75%;
 	height: 100px;
@@ -35,10 +75,15 @@ background-image:url("../img/bedge_grunge.png");
 	right: 0;
 	margin: auto;
 	margin-bottom: 1em;
+	margin-right: 1em;
 }
 
 #glacierText p{
-	font-weight: heavy;
+	opacity: 1;
+	padding: 0.20em;
+	font-family: "Neuton";
+	font-size: 1.3em;
+	font-weight: 400;
 }
 
 #map
@@ -61,10 +106,15 @@ background:#382727;
 border-bottom:2px solid #c24646;
 }
 
+b.about{
+	font-weight: 400;
+	font-family: "Neuton";
+	font-size: 1.2em;
+}
 .top-bar-section li:not(.has-form) a:not(.button) {
 	background:#382727;
 	border-bottom:2px solid #c24646;
-	line-height: 43px;
+	line-height: 42px;
 }
 	
 .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -73,42 +123,50 @@ background:#382727;
 }
 
 #yearText{
-font-family: "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
-font-weight: bold;
+font-family: "Neuton";
+font-weight: 700;
 padding-left: 1.25em;
 position: absolute;
 z-index: 80;
 bottom: 80px;
 left: 20px;
-font-size: 25px;
+font-size: 2em;
 width:100px;
 height: 25px;
 }
 
 button{
-	background: white;
-	border-color: white;
-	opacity: 0.5;
+	background:	#E6E6E6;
+	border-color: #E6E6E6;
+	opacity: 0.6;
 	padding: 0.75rem;
 }
 
 button:hover{
-	background: white;
-	opacity: 0.8;
+	background:	#E6E6E6;
+	opacity: 1;
 }
 
 .button:focus{
-	background-color: white;
-	background: white;
-	opacity: 0.8;
+	background-color: #E6E6E6;
+	border-color: #E6E6E6;
+	background:	#E6E6E6;
+	opacity: 0.6;
 }
 
 button:focus{
-	background-color: white;
-	background: white;
-	opacity: 0.8;
+	background-color: #E6E6E6;
+	border-color: #E6E6E6;
+	background:	#E6E6E6;
+	opacity: 0.6;
 }
 
+button:focus:hover{
+	background-color: #E6E6E6;
+	border-color: #E6E6E6;
+	background:	#E6E6E6;
+	opacity: 1;
+}
 
 #timerControls{
 	position: absolute;
@@ -118,6 +176,33 @@ button:focus{
 	left: 20px;
 	bottom:10px;
 	z-index:80;
+}
+
+h4.aboutHeader{
+	font-family: "Neuton";
+	font-size: 1.5em;
+	font-weight:700;
+}
+
+p.aboutText{
+	font-weight: 300;
+	text-align: justify;
+	font-family: "Neuton";
+	font-size: 1.3em;
+}
+
+h5.subsection{
+	font-family: "Neuton";
+	font-size: 1.4em;
+	font-weight:400;
+}
+
+
+#references p{
+	font-family: "Neuton";
+	font-size: 1em;
+	font-weight: 300;
+	
 }
 
 
