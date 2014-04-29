@@ -15,8 +15,8 @@
 
 /**Global Variabls**/
 var map;
-var glaciers;
 var lakes = new Array();
+var glaciers = new Array();
 var states;
 
 /**
@@ -77,6 +77,8 @@ function setMap(){
 
 	baseLayerControl.addTo(map);
 	loadLakes();
+	loadGlaciers();
+	loadStates();
 }
 /**
  * Set the opacity of previous year to 1
@@ -87,6 +89,9 @@ function showVector(yearsIndex) {
 	//lakes[yearsIndex].addTo(map);
 	lakes[yearsIndex].setStyle({
         fillOpacity: 0.85
+    });
+	glaciers[yearsIndex].setStyle({
+        fillOpacity: 0.9
     });
 		
 }
@@ -105,6 +110,9 @@ function showVector(yearsIndex) {
 			lakes[yearsIndex].setStyle({
 		        fillOpacity: 0
 		    });
+			glaciers[yearsIndex].setStyle({
+		        fillOpacity: 0
+		    });
 }
 /**
  * Set the opacity of previous year to 1
@@ -112,19 +120,75 @@ function showVector(yearsIndex) {
  */ 
 function loadLakes() {
 	
-	for (var i = 0; i < years.length; i++){
 	
-		lakes[i] = new L.GeoJSON.AJAX("data/lakes1000/"+years[i]+".geojson", {
-			style: function (feature) {
-				return {color: "#63D1F4",
-					stroke: false,
-					fillOpacity: 0};
-		}
-		}).addTo(map);
-		
+		for (var i = 0; i < years.length; i++){
+			if(i>0){
+				lakes[i] = new L.GeoJSON.AJAX("data/lakes1000/"+years[i]+".geojson", {
+					style: function (feature) {
+						return {color: "#63D1F4",
+							stroke: false,
+							fillOpacity: 0};
+				}
+				}).addTo(map);
+			}else{
+				lakes[i] = new L.GeoJSON.AJAX("data/lakes1000/"+years[i]+".geojson", {
+					style: function (feature) {
+						return {color: "#63D1F4",
+							stroke: false,
+							fillOpacity: 0.85};
+				}
+				}).addTo(map);
+			}
 		
 	}
 	
+}
+	
+	/**
+	 * Set the opacity of previous year to 1
+	 *@param: yearsIndex is timeStamp in timeline, the current years array index.
+	 */ 
+	function loadGlaciers() {
+		
+		for (var i = 0; i < years.length; i++){
+		
+		if(i>0){
+			glaciers[i] = new L.GeoJSON.AJAX("data/glaciers/"+years[i]+".geojson", {
+				style: function (feature) {
+					return {color: "#fefdfb",
+						stroke: false,
+						fillOpacity: 0};
+			}
+			}).addTo(map);
+		}else{
+			glaciers[i] = new L.GeoJSON.AJAX("data/glaciers/"+years[i]+".geojson", {
+				style: function (feature) {
+					return {color: "#fefdfb",
+						stroke: false,
+						fillOpacity: 0.9};
+			}
+			}).addTo(map);
+		}
 	
 }
+	
+	
+}
+	
+/**
+ * Set the opacity of previous year to 1
+ *@param: yearsIndex is timeStamp in timeline, the current years array index.
+ */ 
+function loadStates() {
+	states = new L.GeoJSON.AJAX("data/states.geojson", {
+		style: function (feature) {
+			return {
+				color: "#808080",
+				weight: 1,
+				stroke: true,
+				opacity: 0.4,
+				fillOpacity: 0};
+	}
+	}).addTo(map);
 
+}

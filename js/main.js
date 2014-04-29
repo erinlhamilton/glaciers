@@ -64,12 +64,9 @@ function initialize() {
 $(initialize);
 
 $(window).on("resize", function() {
-    $("#map").height($(window).height()).width($("#map-container").width());
+    $("#map").height($(window).height()*0.95).width($("#map-container").width());
     	if ($("#outer-map-container").height() > 900){
     		$("#outer-map-container").height(900);
-    	};
-    	if ($("#outer-map-container").width() > 900){
-    		$("#outer-map-container").width(900);
     	};
    // map.invalidateSize();
 }).trigger("resize");
