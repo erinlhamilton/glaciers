@@ -64,8 +64,8 @@ function setMap(){
 		map = L.map('map', {
 		center: center,
 		zoom: zoom,
-		maxZoom: zoom,
-		minZoom: zoom,
+//		maxZoom: zoom,
+//		minZoom: zoom,
 		dragging: false,
 		zoomControl: false,
 		keyboard: false,

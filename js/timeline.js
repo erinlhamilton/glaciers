@@ -60,7 +60,6 @@ function animateMap(){
  */
 function updateTimeline(currentTime){
 	$("#yearText").html(commaSeparateNumber(years[currentTime]));
-	//$( "#glacierText h5 b" ).html(commaSeparateNumber(years[currentTime]));
 	$( "#glacierText p" ).html(yearText[years[currentTime]]);
 }
 
@@ -86,6 +85,7 @@ $( "#back" ).click(function(){
 	}
 	showVector(timeStamp);//-->map.js
 	updateTimeline(timeStamp);
+	$("#glacierText").show();
 	$("#pause").hide();
 	$("#play").show();
 	
@@ -112,21 +112,7 @@ $( "#pause" ).click(function(){
 	$("#glacierText").show();
 	
 	});
-  
 
-/**
- * Stop button sets time back to start.
- */
-//$( "#stop" ).click(function(){
-//	timer.stop();
-//	clearVector(timeStamp);//-->map.js
-//	timeStamp = startTime;
-//	showVector(timeStamp);//-->map.js
-//	updateTimeline(timeStamp);
-//	$("#pause").hide();
-//	$("#play").show();
-//	$("#glacierText").show();
-//});
 
 /**
  * Forward button to step forward on timeline
@@ -142,6 +128,7 @@ $( "#forward" ).click(function(){
 		}
 		showVector(timeStamp);//-->map.js
 		updateTimeline(timeStamp);
+		$("#glacierText").show();
 		$("#pause").hide();
 		$("#play").show();
 });
