@@ -49,6 +49,15 @@ p.note{
 
 }
 
+#AboutMap{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#Legend{
+	text-align: center;
+}
+
 b.cap{
 	font-family: "Neuton";
 	font-weight: 400;
