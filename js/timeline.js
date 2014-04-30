@@ -85,7 +85,7 @@ $( "#back" ).click(function(){
 	}
 	showVector(timeStamp);//-->map.js
 	updateTimeline(timeStamp);
-	$("#glacierText").show();
+	$("#glacierText  p").show();
 	$("#pause").hide();
 	$("#play").show();
 	
@@ -98,7 +98,7 @@ $( "#play" ).click(function(){
 		timer.play();
 		$("#play").hide();
 		$("#pause").show();
-		$("#glacierText").hide();
+		$("#glacierText  p").hide();
 });
 
 
@@ -109,7 +109,7 @@ $( "#pause" ).click(function(){
 	timer.stop();
 	$("#pause").hide();
 	$("#play").show();
-	$("#glacierText").show();
+	$("#glacierText  p").show();
 	
 	});
 
@@ -128,7 +128,7 @@ $( "#forward" ).click(function(){
 		}
 		showVector(timeStamp);//-->map.js
 		updateTimeline(timeStamp);
-		$("#glacierText").show();
+		$("#glacierText  p").show();
 		$("#pause").hide();
 		$("#play").show();
 });

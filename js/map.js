@@ -23,9 +23,9 @@ var states;
  * Creates the map from leaflet and sets the view extent and tilelayer source.
  * Called from main.js initialize()
  */
-function setMap(){
-	var zoom = 7;
-	var center = [44.25, -88.75];
+function setMap(zoom, center){
+	//var zoom = 7;
+	//var center = [44.25, -88.75];
 
 	var acetate = L.tileLayer(
 		'http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',	

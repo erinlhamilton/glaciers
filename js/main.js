@@ -44,12 +44,10 @@ var yearText = (function () {
  */
 function initialize() {
 	"use strict";
+	windowSize(); //--> main.js
 	$("#pause").hide();
-	setMap();
 	$("#yearText").html(commaSeparateNumber(years[0]));
 	$( "#glacierText p" ).html(yearText[years[0]]);
-	showVector(0);
-	
 }
 
 
@@ -58,21 +56,36 @@ function initialize() {
  */
 $(initialize);
 
-$(window).on("resize", function() {
-  // $("#map").height($(window).height()*0.8).width($("#map-container").width());
-	// $("#outer-map-container").height($(window).height()*0.9);
+function windowSize(){
+	var zoom;
+	var center;
 	 $("#map").height($("#map-container").height()).width($("#map-container").width());
-////    	if ($("#outer-map-container").height() > 900){
-////    		$("#outer-map-container").height(900);
-////    	};
-////
-////    	if($("#map-container").width() <= 500){
-////    		$("#glacierText").hide();
-////       	    map.fitBounds (
-////                    [[46.600932, -92.034968],
-////                     [42.501032, -88.024958]]
-////                   );
-////    	};
-//
+	 if($("#map-container").width() <= 500){
+			zoom = 6;
+			center = [44.25, -88.75];
+			setMap(zoom, center);
+		}else{
+			zoom = 7;
+			center = [44, -89.5];
+			setMap(zoom, center);
+		}
+	
+}
+
+$(window).on("resize", function() {
+$("#map").height($("#map-container").height()).width($("#map-container").width());
+	console.log($("#map-container").width());
+
+	if($("#map-container").width() <= 500){
+       	    map.fitBounds (
+                   ([[46.600932, -92.034968],
+                     [42.501032, -88.024958]]), 6
+              );
+	}else{
+   	    map.fitBounds (
+                ([[46.600932, -92.034968],
+                  [42.501032, -88.024958]]), 7
+           );
+	}
 }).trigger("resize");
 
