@@ -59,18 +59,20 @@ function initialize() {
 $(initialize);
 
 $(window).on("resize", function() {
-    $("#map").height($(window).height()*0.95).width($("#map-container").width());
-    	if ($("#outer-map-container").height() > 900){
-    		$("#outer-map-container").height(900);
-    	};
-
-    	if($("#map-container").width() <= 500){
-    		$("#glacierText").hide();
-       	    map.fitBounds (
-                    [[46.600932, -92.034968],
-                     [42.501032, -88.024958]]
-                   );
-    	};
-
+  // $("#map").height($(window).height()*0.8).width($("#map-container").width());
+	// $("#outer-map-container").height($(window).height()*0.9);
+	 $("#map").height($("#map-container").height()).width($("#map-container").width());
+////    	if ($("#outer-map-container").height() > 900){
+////    		$("#outer-map-container").height(900);
+////    	};
+////
+////    	if($("#map-container").width() <= 500){
+////    		$("#glacierText").hide();
+////       	    map.fitBounds (
+////                    [[46.600932, -92.034968],
+////                     [42.501032, -88.024958]]
+////                   );
+////    	};
+//
 }).trigger("resize");
 

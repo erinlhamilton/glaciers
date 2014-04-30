@@ -30,7 +30,7 @@ function setMap(){
 	var acetate = L.tileLayer(
 		'http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',	
 		{
-			attribution: 'Acetate tileset from GeoIQ'
+			attribution: 'GeoIQ'
 		});
 
 
@@ -43,7 +43,7 @@ function setMap(){
 			layers: 1,
 			transparent: true,
 			opacity: 0.7,
-			attribution: 'Wisconsin Geological and Natural History Survey tiles'
+			attribution: 'WGNHS'
 		});	
 		
 		var wgnhsShade = L.tileLayer.wms(
@@ -53,7 +53,7 @@ function setMap(){
 			{
 			format: 'image/png',
 			layers: 0,
-			attribution: 'Wisconsin Geological and Natural History Survey tiles'
+			attribution: 'WGNHS'
 		});	
 		
 		var baseMaps = {
@@ -62,15 +62,15 @@ function setMap(){
 		};
 		
 		map = L.map('map', {
-		center: center,
-		zoom: zoom,
-//		maxZoom: zoom,
-//		minZoom: zoom,
-		dragging: false,
-		zoomControl: false,
-		keyboard: false,
-		doubleClickZoom: false,
-		layers: [wgnhs, wgnhsShade]
+			center: center,
+			zoom: zoom,
+	//		maxZoom: zoom,
+	//		minZoom: zoom,
+			dragging: false,
+			zoomControl: false,
+			keyboard: false,
+			doubleClickZoom: false,
+			layers: [wgnhs, wgnhsShade]
 	});
 		
 	var baseLayerControl =   L.control.layers(baseMaps, null, {position: 'topleft', collapsed: true});
