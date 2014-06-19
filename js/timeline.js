@@ -80,8 +80,10 @@ $( "#back" ).click(function(){
 	clearVector(timeStamp);//-->map.js
 	if(timeStamp > startTime){
 		timeStamp = timeStamp - 1;
+		$("#forward").prop("disabled", false);
 	}else{
-		timeStamp = endTime;
+		timeStamp = startTime;
+		$("#back").prop("disabled", true);
 	}
 	showVector(timeStamp);//-->map.js
 	updateTimeline(timeStamp);
@@ -122,9 +124,11 @@ $( "#forward" ).click(function(){
 		clearVector(timeStamp);//-->map.js
 		if(timeStamp < endTime){
 			timeStamp = timeStamp + 1;
+			$("#back").prop("disabled", false);
 		}
 		else{
-			timeStamp = startTime;
+			timeStamp = endTime;
+			$("#forward").prop("disabled", true);
 		}
 		showVector(timeStamp);//-->map.js
 		updateTimeline(timeStamp);

@@ -74,11 +74,13 @@ function setMap(zoom, center){
 	});
 		
 	var baseLayerControl =   L.control.layers(baseMaps, null, {position: 'topleft', collapsed: true});
-
+	L.control.scale().addTo(map);
+	
 	baseLayerControl.addTo(map);
 	loadLakes();
 	loadGlaciers();
 	loadStates();
+	loadMask();
 }
 /**
  * Set the opacity of previous year to 1
@@ -91,7 +93,7 @@ function showVector(yearsIndex) {
         fillOpacity: 0.85
     });
 	glaciers[yearsIndex].setStyle({
-        fillOpacity: 0.9
+        fillOpacity: 1
     });
 		
 }
@@ -165,7 +167,7 @@ function loadLakes() {
 				style: function (feature) {
 					return {color: "#fefdfb",
 						stroke: false,
-						fillOpacity: 0.9};
+						fillOpacity: 1};
 			}
 			}).addTo(map);
 		}
@@ -186,8 +188,25 @@ function loadStates() {
 				color: "#808080",
 				weight: 1,
 				stroke: true,
-				opacity: 0.4,
+				opacity: 1,
 				fillOpacity: 0};
+	}
+	}).addTo(map);
+
+}
+
+/**
+ * Set the opacity of previous year to 1
+ *@param: yearsIndex is timeStamp in timeline, the current years array index.
+ */ 
+function loadMask() {
+	states = new L.GeoJSON.AJAX("data/mask.geojson", {
+		style: function (feature) {
+			return {
+				color: "#BABABA",
+				weight: 0,
+				opacity: 0,
+				fillOpacity: 1};
 	}
 	}).addTo(map);
 
