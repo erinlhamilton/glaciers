@@ -74,13 +74,14 @@ function setMap(zoom, center){
 	});
 		
 	var baseLayerControl =   L.control.layers(baseMaps, null, {position: 'topleft', collapsed: true});
-	L.control.scale().addTo(map);
+	L.control.scale({position: 'bottomright'}).addTo(map);
 	
 	baseLayerControl.addTo(map);
 	loadLakes();
 	loadGlaciers();
 	loadStates();
 	loadMask();
+	
 }
 /**
  * Set the opacity of previous year to 1
@@ -203,7 +204,7 @@ function loadMask() {
 	states = new L.GeoJSON.AJAX("data/mask.geojson", {
 		style: function (feature) {
 			return {
-				color: "#BABABA",
+				color: "#CDB38B",
 				weight: 0,
 				opacity: 0,
 				fillOpacity: 1};
@@ -211,3 +212,4 @@ function loadMask() {
 	}).addTo(map);
 
 }
+

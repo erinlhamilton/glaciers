@@ -60,18 +60,18 @@ function windowSize(){
 	var zoom;
 	var center;
 	 $("#map").height($("#map-container").height()).width($("#map-container").width());
-//	 if($("#map-container").width() <= 500){
-//			zoom = 6;
-//			center = [44.25, -88.75];
-//			setMap(zoom, center);
-//		}else{
-//			zoom = 7;
-//			center = [44, -89.5];
-//			setMap(zoom, center);
-//		}
+	 if($("#map-container").width() <= 500){
+			zoom = 6;
+			center = [44.25, -88.75];
+			setMap(zoom, center);
+		}else{
+			zoom = 6;
+			center = [44, -89.5];
+			setMap(zoom, center);
+		}
 	
-		zoom = 6;
-		center = [44.25, -88.75];
+		//zoom = 6;
+		//center = [44.25, -88.75];
 		setMap(zoom, center);
 }
 
@@ -87,7 +87,7 @@ $("#map").height($("#map-container").height()).width($("#map-container").width()
 	}else{
    	    map.fitBounds (
                 ([[46.600932, -92.034968],
-                  [42.501032, -88.024958]]), 7
+                  [42.501032, -88.024958]]), 6
            );
 	}
 }).trigger("resize");
