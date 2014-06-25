@@ -6,7 +6,7 @@
 // Author:          Erin Hamilton
 // Email:           erin@erinhamilton.me
 //
-// Last Updated:    March 2014
+// Last Updated:    June 2014
 //
 // Description:    Creates the jQuery UI slider for timeline control, as well
 //                 as timer module and play/pause/step buttons.

@@ -7,7 +7,7 @@
 // Author:          Erin Hamilton
 // Email:           erin@erinhamilton.me
 //
-// Last Updated:    March 2014
+// Last Updated:    June 2014
 //
 // Description:     Controls main functionality of Wisconsin Glacial Extents.
 //                  Calls functions to create map, timeline, and dialog on 
@@ -60,35 +60,15 @@ function windowSize(){
 	var zoom;
 	var center;
 	 $("#map").height($("#map-container").height()).width($("#map-container").width());
-	 if($("#map-container").width() <= 500){
+	 if($("#map-container").width() <= 1100){
 			zoom = 6;
 			center = [44.25, -88.75];
 			setMap(zoom, center);
 		}else{
-			zoom = 6;
+			zoom = 7;
 			center = [44, -89.5];
 			setMap(zoom, center);
 		}
-	
-		//zoom = 6;
-		//center = [44.25, -88.75];
-		setMap(zoom, center);
+
 }
-
-$(window).on("resize", function() {
-$("#map").height($("#map-container").height()).width($("#map-container").width());
-	console.log($("#map-container").width());
-
-	if($("#map-container").width() <= 500){
-       	    map.fitBounds (
-                   ([[46.600932, -92.034968],
-                     [42.501032, -88.024958]]), 6
-              );
-	}else{
-   	    map.fitBounds (
-                ([[46.600932, -92.034968],
-                  [42.501032, -88.024958]]), 6
-           );
-	}
-}).trigger("resize");
 

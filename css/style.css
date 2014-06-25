@@ -67,6 +67,7 @@ b.cap{
 
 #outer-map-container{
     margin:0 auto;
+  
 }
 
 #map-container{
@@ -76,12 +77,13 @@ b.cap{
     max-height: 90vh;
     max-width: 80vh;
     margin: auto;
+    
 }
 
 #map{
 	position: absolute;
 	top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
-	border:1px solid #C0C0C0;
+	border:2px solid #000000;
 	margin: 0 auto;
 }
 
@@ -180,6 +182,14 @@ button:focus:hover{
 	border-color: #E6E6E6;
 	background:	#E6E6E6;
 	opacity: 1;
+}
+
+button:disabled{
+	background-color: #4D4D4D;
+}
+
+button:disabled:hover{
+	background-color: #4D4D4D;
 }
 
 #timerControls{

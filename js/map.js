@@ -5,7 +5,7 @@
 // Author:          Erin Hamilton
 // Email:           erin@erinhamilton.me
 //
-// Last Updated:    March 2014
+// Last Updated:    June 2014
 //
 // Description:     Creates the Leaflet map displaying the glacial extents in
 //                  Wisconsin. Fetches data from ArcGIS server asynchronously.
@@ -24,8 +24,6 @@ var states;
  * Called from main.js initialize()
  */
 function setMap(zoom, center){
-	//var zoom = 7;
-	//var center = [44.25, -88.75];
 
 	var acetate = L.tileLayer(
 		'http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',	
@@ -64,32 +62,47 @@ function setMap(zoom, center){
 		map = L.map('map', {
 			center: center,
 			zoom: zoom,
-	//		maxZoom: zoom,
-	//		minZoom: zoom,
-			dragging: false,
-			zoomControl: false,
+			maxZoom: 7,
+			minZoom: 6,
+			dragging: true,
+			zoomControl: true,
 			keyboard: false,
 			doubleClickZoom: false,
+			scrollWheelZoom: false,
 			layers: [wgnhs, wgnhsShade]
 	});
 		
-	var baseLayerControl =   L.control.layers(baseMaps, null, {position: 'topleft', collapsed: true});
+		
+	//add a control to change the basemap tiles
+	var baseLayerControl =   L.control.layers(baseMaps, null, {position: 'topright', collapsed: true});
+	
+	//add a scale bar
 	L.control.scale({position: 'bottomright'}).addTo(map);
+	
+	//add max bounds to restrict panning
+	var southWest = L.latLng(38.071, -95.645),
+    northEast = L.latLng(50.077, -81.416),
+    bounds = L.latLngBounds(southWest, northEast);
+	map.setMaxBounds(bounds);
+	
 	
 	baseLayerControl.addTo(map);
 	loadLakes();
 	loadGlaciers();
-	loadStates();
 	loadMask();
+	loadStates();
 	
 }
+
+
+
+
 /**
  * Set the opacity of previous year to 1
  *@param: yearsIndex is timeStamp in timeline, the current years array index.
  */ 
 function showVector(yearsIndex) {
 		
-	//lakes[yearsIndex].addTo(map);
 	lakes[yearsIndex].setStyle({
         fillOpacity: 0.85
     });
@@ -104,12 +117,7 @@ function showVector(yearsIndex) {
  *@param: yearsIndex is timeStamp in timeline, the current years array index.
  */ 
 	function clearVector(yearsIndex) {
-//			var currYear;
-//			if (yearsIndex === 0){
-//				currYear = years.length-1;
-//			}else{
-//				currYear = yearsIndex-1;
-//			}
+
 			lakes[yearsIndex].setStyle({
 		        fillOpacity: 0
 		    });
@@ -148,8 +156,7 @@ function loadLakes() {
 }
 	
 	/**
-	 * Set the opacity of previous year to 1
-	 *@param: yearsIndex is timeStamp in timeline, the current years array index.
+	 * The glacier files. If current year, opacity 1, if not opacity 0
 	 */ 
 	function loadGlaciers() {
 		
@@ -179,8 +186,7 @@ function loadLakes() {
 }
 	
 /**
- * Set the opacity of previous year to 1
- *@param: yearsIndex is timeStamp in timeline, the current years array index.
+ * US states and Canadian Province lines
  */ 
 function loadStates() {
 	states = new L.GeoJSON.AJAX("data/states.geojson", {
@@ -193,18 +199,18 @@ function loadStates() {
 				fillOpacity: 0};
 	}
 	}).addTo(map);
+	states.bringToFront();
 
 }
 
 /**
- * Set the opacity of previous year to 1
- *@param: yearsIndex is timeStamp in timeline, the current years array index.
+ * Load the mask that blocks out areas of no data
  */ 
 function loadMask() {
 	states = new L.GeoJSON.AJAX("data/mask.geojson", {
 		style: function (feature) {
 			return {
-				color: "#CDB38B",
+				color: "#CDC8B1",
 				weight: 0,
 				opacity: 0,
 				fillOpacity: 1};
