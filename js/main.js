@@ -60,7 +60,7 @@ function windowSize(){
 	var zoom;
 	var center;
 	 $("#map").height($("#map-container").height()).width($("#map-container").width());
-	 if($("#map-container").width() <= 1100){
+	 if($("#map-container").width() <= 900){
 			zoom = 6;
 			center = [44.25, -88.75];
 			setMap(zoom, center);

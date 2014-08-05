@@ -207,7 +207,7 @@ function loadStates() {
  * Load the mask that blocks out areas of no data
  */ 
 function loadMask() {
-	states = new L.GeoJSON.AJAX("data/mask.geojson", {
+	mask = new L.GeoJSON.AJAX("data/mask.geojson", {
 		style: function (feature) {
 			return {
 				color: "#CDC8B1",
@@ -216,6 +216,7 @@ function loadMask() {
 				fillOpacity: 1};
 	}
 	}).addTo(map);
+	mask.bringToFront();
 
 }
 
